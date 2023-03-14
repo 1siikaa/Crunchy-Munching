@@ -1,5 +1,5 @@
 import './App.css';
-import '../node_modules/bootstrap-dark-5/dist/css/bootstrap-dark.min.css'  //npm i bootstrap-dark-5 boostrap
+
 
 import Home from './screens/Home';
 import {
