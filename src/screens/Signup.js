@@ -37,9 +37,10 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://crunchy-back.vercel.app/createuser", {
+    const response = await fetch("http://crunchy-back.vercel.app/createuser", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
+      mode: 'no-cors',
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -71,19 +72,19 @@ export default function Signup() {
       </div>
 
         <div className='container' >
-          <form className='w-50 m-auto mt-5 border bg-dark border-success rounded' onSubmit={handleSubmit}>
+          <form className='w-50 m-auto mt-5 border bg-light border-success rounded' onSubmit={handleSubmit}>
             <div className="m-3">
               <label htmlFor="name" className="form-label">Name</label>
-              <input type="text" className="form-control" name='name' value={credentials.name} onChange={onChange} aria-describedby="emailHelp" />
+              <input type="text" className="form-control" name='name' value={credentials.name} placeholder = 'Enter name' onChange={onChange} aria-describedby="emailHelp" />
             </div>
             <div className="m-3">
               <label htmlFor="email" className="form-label">Email address</label>
-              <input type="email" className="form-control" name='email' value={credentials.email} onChange={onChange} aria-describedby="emailHelp" />
+              <input type="email" className="form-control" name='email' value={credentials.email} onChange={onChange} placeholder = 'Enter email' aria-describedby="emailHelp" />
             </div>
             <div className="m-3">
               <label htmlFor="address" className="form-label">Address</label>
               <fieldset>
-                <input type="text" className="form-control" name='address' placeholder='"Click below for fetching address"' value={address} onChange={(e)=>setAddress(e.target.value)} aria-describedby="emailHelp" />
+                <input type="text" className="form-control" name='address' placeholder= "Click below for fetching address" value={address} onChange={(e)=>setAddress(e.target.value)} aria-describedby="emailHelp" />
               </fieldset>
             </div>
             <div className="m-3">
@@ -91,9 +92,12 @@ export default function Signup() {
             </div>
             <div className="m-3">
               <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
-              <input type="password" className="form-control" value={credentials.password} onChange={onChange} name='password' />
+              <input type="password" className="form-control" value={credentials.password} placeholder = 'Enter password' onChange={onChange} name='password' />
+              
+              <div className="form-text">Your password should contain atleast 8 and atmost 16 and 1 special_character, 1 digit , 1 uppercase and 1 lowecase character.</div>
+              
             </div>
-            <button type="submit" className="m-3 btn btn-success">Submit</button>
+            <button type="submit" className="m-3 btn btn-success">SignUp</button>
             <Link to="/login" className="m-3 mx-1 btn btn-danger">Already a user</Link>
           </form>
         </div>
