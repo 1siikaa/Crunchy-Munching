@@ -21,7 +21,7 @@ export default function Signup() {
     // console.log(latlong)
     let [lat, long] = latlong
     console.log(lat, long)
-    const response = await fetch("https://crunchy-back.vercel.app/getlocation", {
+    const response = await fetch("https://crunchy-backend.vercel.app/getlocation", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -37,7 +37,7 @@ export default function Signup() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://crunchy-back.vercel.app/createuser", {
+    const response = await fetch("https://crunchy-backend.vercel.app/createuser", {
       // credentials: 'include',
       // Origin:"http://localhost:3000/login",
       mode: 'no-cors',
