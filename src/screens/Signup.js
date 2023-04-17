@@ -21,7 +21,7 @@ export default function Signup() {
     // console.log(latlong)
     let [lat, long] = latlong
     console.log(lat, long)
-    const response = await fetch("https://crunchy-backend.vercel.app/getlocation", {
+    const response = await fetch("http://localhost:5000/getlocation", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
